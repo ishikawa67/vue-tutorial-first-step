@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ message }}</h1>
     <p>{{ description }}</p>
-    <button @click="changeMessage">Push Please</button>
+    <button @click="countPush">Push Please</button>
     <p>Button pushed: {{ count }} times</p>
   </div>
 </template>
@@ -22,16 +22,8 @@ const message = ref<string>('Hello, Vue 3 with <script setup> and TypeScript!')
 const count = ref<number>(0)
 
 // メソッドの定義
-let changeFlag = true
-const changeMessage = (): void => {
+const countPush = (): void => {
   count.value++
-  if (changeFlag) {
-    message.value = 'You clicked the button! firstTime or odd'
-    changeFlag = !changeFlag
-  } else {
-    message.value = 'You clicked the button! even times'
-    changeFlag = !changeFlag
-  }
 }
 </script>
 
